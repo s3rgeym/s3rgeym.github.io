@@ -5,13 +5,12 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <div id="xterm"></div>
-    
+    <div id="xterm"></div>  
     <script type="module">
       import { Terminal } from 'https://cdn.jsdelivr.net/npm/xterm@5.3.0/+esm'
-    	import { AttachAddon } from 'https://cdn.jsdelivr.net/npm/xterm-addon-attach@0.9.0/+esm
+    	import { AttachAddon } from 'https://cdn.jsdelivr.net/npm/xterm-addon-attach@0.9.0/+esm'
       const terminal = new Terminal()
-      const attachAddon = new AttachAddon('wss://baza.store:9081/ws')
+      const attachAddon = new AttachAddon(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz'))
       terminal.loadAddon(attachAddon)
       terminal.open(document.getElementById('xterm'))
     </script>
