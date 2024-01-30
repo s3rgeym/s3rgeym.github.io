@@ -14,6 +14,7 @@
     	import { AttachAddon } from 'https://cdn.jsdelivr.net/npm/xterm-addon-attach@0.9.0/+esm'
       const terminal = new Terminal({
         // https://xtermjs.org/docs/api/terminal/interfaces/iterminaloptions/#optional-fontsize
+        convertEol: true,
         fontFamily: "'JetBrains Mono', monospace",
         fontSize: 14,
         lineHeight: 1.24,
@@ -23,10 +24,10 @@
           background: 'black',
         }
       })
+      terminal.open(document.getElementById('xterm'))
       // TODO: использовать socat на сервере
       const attachAddon = new AttachAddon(new WebSocket(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz')))
       terminal.loadAddon(attachAddon)
-      terminal.open(document.getElementById('xterm'))
     </script>
   </body>
 </ntml>
