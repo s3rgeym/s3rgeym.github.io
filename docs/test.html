@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
     <style>
-      * {
+      html, body {
         margin: 0;
         padding: 0;
       }
@@ -31,7 +31,10 @@
         }
       })
       // TODO: использовать socat на сервере
-      terminal.loadAddon(new AttachAddon(new WebSocket(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz'))))
+      terminal.loadAddon(new AttachAddon(
+        new WebSocket(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz')),
+        { bidirectional: true, inputUtf8: true }
+      ))
       terminal.open(document.getElementById('xterm'))
       terminal.focus()
     </script>
