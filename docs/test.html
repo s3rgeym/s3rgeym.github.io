@@ -6,6 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <div id="xterm"></div>  
@@ -24,10 +30,10 @@
           background: 'black',
         }
       })
-      terminal.open(document.getElementById('xterm'))
       // TODO: использовать socat на сервере
-      const attachAddon = new AttachAddon(new WebSocket(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz')))
-      terminal.loadAddon(attachAddon)
+      terminal.loadAddon(new AttachAddon(new WebSocket(atob('d3NzOi8vYmF6YS5zdG9yZTo5MDgxL3dz'))))
+      terminal.open(document.getElementById('xterm'))
+      terminal.focus()
     </script>
   </body>
 </ntml>
